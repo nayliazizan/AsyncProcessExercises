@@ -15,13 +15,18 @@
 const axios = require('axios');
 
 // Write you code below
-const callAPI = 
-
-
-
+const callAPI = async () => {
+    try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        const data = response.data;
+        console.log(data);
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+};
 
 // DO NOT EDIT THE CODE BELOW
-callAPI()
+callAPI();
 
 
 // Expected output (it looks ugly but you should at least see status code of 200):

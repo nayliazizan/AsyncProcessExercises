@@ -13,8 +13,16 @@
 const axios = require('axios');
 
 // Write you code below
-const callAPI = 
-
+const callAPI = async () => {
+    try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        const users = response.data;
+        const oddUsers = users.filter((user) => user.id % 2 === 1);
+        console.log(oddUsers);
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
+  };
 // DO NOT EDIT THE CODE BELOW
 callAPI()
 
